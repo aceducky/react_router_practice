@@ -9,6 +9,6 @@ npm run dev
 ### Todo server
 
 ```bash
-node todo_server
+node todo_server.js
 
 ```
