@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "todo_server": "bun run --watch todo_server.js"
+    "todo_server": "node todo_server.js"
   },
   "dependencies": {
     "react": "^18.3.1",
