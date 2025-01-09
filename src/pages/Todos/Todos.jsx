@@ -13,10 +13,10 @@ export function Todos() {
             <NavLink
               key={todo.id}
               to={`/todos/${todo.id}`}
-              className={({ isActive, isPending }) =>
+              className={({ isActive }) =>
                 `w-full py-5 ${
                   isActive ? "text-cyan-500 font-bold" : "hover:font-semibold"
-                } ${isPending ? "below-loading-bar" : ""}`
+                } `
               }
             >
               {todo.title}

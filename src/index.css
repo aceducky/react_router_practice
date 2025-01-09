@@ -17,13 +17,34 @@
       transform: translateX(-10%) scaleX(0);
     }
     50% {
-      transform: translateX(0) scaleX(1);
+      transform: translateX(0) scaleX(0.9);
     }
     100% {
-      transform: translateX(100%) scaleX(0);
+      transform: translateX(100%) scaleX(0.5);
     }
   }
 
+  .global-loading-bar {
+    position: relative;
+  }
+
+  .global-loading-bar::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255),
+      rgb(143, 145, 161),
+      rgba(255, 255, 255)
+    );
+    transform-origin: left;
+    animation: loading 1.5s ease-in infinite;
+  }
   .below-loading-bar::after {
     content: "";
     display: block;
