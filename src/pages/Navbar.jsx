@@ -1,14 +1,12 @@
 import { NavLink, useNavigation } from "react-router";
 import { router } from "../routes";
-
 function Navbar() {
   // Only gets the first level of routes
   const routes = router.routes[0].children;
   const navigation = useNavigation();
-
   return (
     <nav
-      className={`grid grid-flow-col grid-rows-1 justify-around items-center border-b border-black ${
+      className={`grid grid-flow-col justify-evenly items-center border-b border-black ${
         navigation.state === "loading" ? "global-loading-bar" : ""
       }`}
     >
@@ -16,11 +14,12 @@ function Navbar() {
         <NavLink
           key={route.path}
           to={route.path}
-          className={({ isActive}) =>
-            `p-4 grid align-middle justify-evenly h-full min-w-20 ${
-              isActive ? "text-cyan-500 font-bold" : "hover:font-semibold"
-            }`
-          }
+          className={({ isActive }) =>
+            `my-2 p-1 rounded h-fit ${
+              isActive
+                ? "text-cyan-500 font-bold"
+                : "hover:bg-slate-500 hover:bg-opacity-50"
+            }`}
         >
           {route.path === "/" ? "HOME" : route.path.slice(1).toUpperCase()}
         </NavLink>
@@ -28,5 +27,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;
